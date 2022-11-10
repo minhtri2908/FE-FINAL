@@ -1,0 +1,40 @@
+.icon-link {
+  cursor: pointer;
+  color: 'none';
+}
+.color-btn {
+  background: white;
+  color: black;
+  /* border: 1%; */
+  border-color: black;
+}
+.color-btn:hover {
+  color: white;
+  background: linear-gradient(-90deg, #1aa37a, #9dffb3);
+  border-color: transparent;
+}
+.App-header1 {
+  background-image: linear-gradient(-90deg, #1aa37a, #9dffb3);
+  position: fixed;
+  width: 100%;
+  z-index: 100;
+}
+.app1 {
+  justify-content: center;
+  display: flow-root;
+}
+.logo_team1 {
+  margin-right: 50rem;
+  font-weight: bold;
+  font-family: cursive;
+}
+.form {
+  margin-top: 13.9rem;
+}
+.login-form{
+  margin-left: 15rem;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background: linear-gradient(-90deg, #1aa37a, #9dffb3);
+}
