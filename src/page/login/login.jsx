@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import axios from 'axios';
+
 import { BsFacebook, BsGoogle, BsTwitter, BsGithub } from 'react-icons/bs';
 import { useNavigate } from 'react-router-dom';
 import './login.scss'
@@ -16,6 +17,7 @@ import {
 import Header from '../../component/header/header';
 import Footer from '../../component/Footer/Footer';
 import { AuthContext } from '../../context/AuthContext';
+import {axiosInstance} from '../../config'
 function Login() {
   const [justifyActive, setJustifyActive] = useState('tab1');
 
@@ -24,7 +26,6 @@ function Login() {
     email: undefined,
     password: undefined,
   });
-
   const { loading, error, dispatch } = useContext(AuthContext);
   const handleJustifyClick = (value) => {
     if (value === justifyActive) {
@@ -32,23 +33,8 @@ function Login() {
     }
     setJustifyActive(value);
   };
-
-  // const [username, setUsername] = useState('');
-  // const [email, setEmail] = useState('');
-  // const [password, setPassword] = useState('');
-  // console.log({ username, email, password });
   const navigate = useNavigate();
-  // const handleEmail = (e) => {
-  //   setEmail(e.target.value);
-  // };
-  // const handleUsername = (e) => {
-  //   setUsername(e.target.value);
-  // };
-  // const handlePassword = (e) => {
-  //   setPassword(e.target.value);
-  // };
   const handleChange = (e) => {
-    // console.log(e);
     setCredentials((prev) => ({ ...prev, [e.target.id]: e.target.value }));
   };
   const handlelogin = async (e) => {
@@ -56,8 +42,8 @@ function Login() {
     dispatch({type: 'LOGIN_START'});
 
     try {
-      const res = await axios.post(
-        "https://backend-web-app-1.herokuapp.com/api/author/login",
+      const res = await axiosInstance.post(
+        "author/login",
         credentials
       );
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
@@ -71,8 +57,8 @@ function Login() {
     dispatch({type: 'REGISTER_START'});
 
     try {
-      const res = await axios.post(
-        "https://backend-web-app-1.herokuapp.com/api/author/register",
+      const res = await axiosInstance.post(
+        "author/register",
         credentials
       );
       dispatch({ type: 'REGISTER_SUCCESS', payload: res.data });
