@@ -57,7 +57,7 @@ function Login() {
 
     try {
       const res = await axios.post(
-        "/api/author/login",
+        "https://backend-web-app-1.herokuapp.com/api/author/login",
         credentials
       );
       dispatch({ type: 'LOGIN_SUCCESS', payload: res.data });
@@ -72,7 +72,7 @@ function Login() {
 
     try {
       const res = await axios.post(
-        "/api/author/register",
+        "https://backend-web-app-1.herokuapp.com/api/author/register",
         credentials
       );
       dispatch({ type: 'REGISTER_SUCCESS', payload: res.data });
