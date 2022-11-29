@@ -1,8 +1,12 @@
 import './styles/css/bootstrap.min.css';
-import './styles/css/App.css';
 import Login from './page/login/login';
 import Home from './page/home/home';
-import Regishotel from './page/register-hotel/regishotel';
+import Regishotel from './page/registerhotel/regishotel';
+import Regispartner from './page/regispartner/regispartner';
+import Support from './page/support/support';
+import Searchresult  from './page/searchresult/searchresult';
+import Visit from './page/visit/visit';
+import Hotel from './page/hotel/hotel'
 import { useContext } from 'react';
 import {
   BrowserRouter,
@@ -13,14 +17,18 @@ import {
 function App() {
   return (
     <main className="App">
-      
       <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />}></Route>
-          <Route path="/login" element={<Login />}></Route>
-          <Route path="/register-hotel" element = {<Regishotel />} ></Route>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register-hotel" element = {<Regishotel />} />
+          <Route path="/register-partner" element = {<Regispartner />} />
+          <Route path="/support" element = {<Support />} />
+          <Route path="/searchresult" element = {<Searchresult  />} />
+          <Route path="/visit" element = {<Visit  />} />
+          <Route path="/hotel" element = {<Hotel />} />
         </Routes>
-      </BrowserRouter>,
+      </BrowserRouter>
     </main>
   );
 }
