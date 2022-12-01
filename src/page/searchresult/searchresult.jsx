@@ -11,8 +11,9 @@ import format from 'date-fns/format';
 import { DateRange, DateRangePicker } from 'react-date-range';
 import { useState } from 'react';
 import { MDBCheckbox } from 'mdb-react-ui-kit';
-import imageroomhotel from '../../image/234762091.jpg';
 import { Link } from 'react-router-dom';
+import { Image } from 'cloudinary-react';
+
 function Searchresult_app() {
   const [OpenDate, setOpenDate] = useState(false);
   const [date, setDate] = useState([
@@ -190,10 +191,11 @@ function Searchresult_app() {
             </div>
             <div className="shadow item-hotel ">
               <div className="d-flex m-2">
-                <img
+                <Image
+                  cloudName="dxivl2lh5"
+                  publicId="rest/khachsan_kib5dt"
                   className="w-25"
-                  src={imageroomhotel}
-                  alt="hình ảnh phòng"
+                  crop="scale"
                 />
                 <div className="m-2 w-75">
                   <div className="d-flex">

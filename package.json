@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.1.2",
     "bootstrap": "^5.2.2",
+    "cloudinary-react": "^1.8.1",
     "date-fns": "^2.29.3",
     "express-load": "^1.1.16",
     "google-map-react": "^2.2.0",

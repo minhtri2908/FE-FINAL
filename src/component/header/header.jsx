@@ -43,6 +43,12 @@ const Header = () => {
             </button>
           </Link>
 
+          <Link to="../support">
+            <button type="button" className="btn btn-light btn_sign">
+              Hỗ trợ
+            </button>
+          </Link>
+
           {user ? (
             <>
               <Dropdown>
@@ -52,7 +58,8 @@ const Header = () => {
                 <Dropdown.Menu>
                   <Dropdown.Item className="dropdown_user-info">{user.username}</Dropdown.Item>
                   <Dropdown.Divider />
-                  <Dropdown.Item onClick={handleLogout} href="#/action-2">Logout</Dropdown.Item>
+                  <Dropdown.Item href="#/action-2">Phòng đã đặt</Dropdown.Item>
+                  <Dropdown.Item onClick={handleLogout} href="#/action-2">Đăng xuất</Dropdown.Item>
                 </Dropdown.Menu>
               </Dropdown>
             </>
@@ -63,11 +70,6 @@ const Header = () => {
               </button>
             </Link>
           )}
-          <Link to="../support">
-            <button type="button" className="btn btn-light btn_sign">
-              Hỗ trợ
-            </button>
-          </Link>
         </form>
       </nav>
 

@@ -1,43 +1,12 @@
 import React from 'react';
 import Footer from '../../component/Footer/Footer';
 import Header from '../../component/header/header';
-import hinh1 from '../../image/1.jpg';
-import hinh2 from '../../image/2.jpg';
-import hinh3 from '../../image/3.jpg';
 import './home.scss';
-import vietnam from '../../image/vietnam.png';
-import khachsan from '../../image/khachsan.jpg';
-import canho from '../../image/canho.jpg';
-import resort from '../../image/resort.jpg';
-import bietthu from '../../image/bietthu.jpg';
-import nhago from '../../image/nha-go-cap-4-dep.jpg';
-import nhanghithonda from '../../image/nha-nghi-o-que-3.jpg';
-import glamping from '../../image/glamping.jpg';
-import nhanghibandb from '../../image/b&b.jpg';
-import Ryokan from '../../image/ryokan.jpeg';
-import riad from '../../image/riad.jpg';
-import khucamtrai from '../../image/khu-cam-trai.jpg';
-import nhathuyen from '../../image/nha-thuyen.jpg';
-import dalat from '../../image/da-lat.jpg';
-import phuquoc from '../../image/phuquoc.jpg';
-import sapa from '../../image/sapa.jpg';
-import vungtau from '../../image/vungtau.jpg';
-import danang from '../../image/danang.jpg';
-import quynhon from '../../image/quynhon.jpg';
-import quangbinh from '../../image/quangbinh.jpg';
-import quangninh from '../../image/quangninh.png';
 import { Link } from 'react-router-dom';
 import {
   faBed,
   faCalendarDays,
-  faCamera,
-  faCar,
-  faHome,
   faHotel,
-  faLocation,
-  faPerson,
-  faPlane,
-  faTaxi,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { DateRange, DateRangePicker } from 'react-date-range';
@@ -46,6 +15,8 @@ import 'react-date-range/dist/theme/default.css';
 import { addDays } from 'date-fns';
 import { useState } from 'react';
 import format from 'date-fns/format';
+import { Image } from 'cloudinary-react';
+
 function Home() {
   const [OpenDate, setOpenDate] = useState(false);
   const [date, setDate] = useState([
@@ -104,13 +75,28 @@ function Home() {
             </div>
             <div className="carousel-inner">
               <div className="carousel-item active">
-                <img src={hinh1} alt="First slide" className="d-block w-100" />
+                <Image
+                  cloudName="dxivl2lh5"
+                  publicId="1_vu75bt"
+                  className="d-block w-100"
+                  crop="scale"
+                />
               </div>
               <div className="carousel-item">
-                <img src={hinh2} alt="Second slide" className="d-block w-100" />
+                <Image
+                  cloudName="dxivl2lh5"
+                  publicId="2_xekldn"
+                  className="d-block w-100"
+                  crop="scale"
+                />
               </div>
               <div className="carousel-item">
-                <img src={hinh3} alt="Third slide" className="d-block w-100" />
+                <Image
+                  cloudName="dxivl2lh5"
+                  publicId="3_wnjtpa"
+                  className="d-block w-100"
+                  crop="scale"
+                />
               </div>
             </div>
             <button
@@ -283,7 +269,11 @@ function Home() {
                 <div className="Sites Ha_noi d-flex  ">
                   <div className="px-1 fw-bold fs-3">Hà Nội </div>
                   <div className="National_flag ">
-                    <img className="" src={vietnam} alt="lá cờ quốc gia" />
+                    <Image
+                      cloudName="dxivl2lh5"
+                      publicId="places/vietnam_fseacf"
+                      crop="scale"
+                    />
                   </div>
                 </div>
               </Link>
@@ -293,7 +283,11 @@ function Home() {
                 <div className="Sites Hoi_an d-flex">
                   <div className="px-1 fw-bold fs-3">Hội An </div>
                   <div className="National_flag ">
-                    <img className="" src={vietnam} alt="lá cờ quốc gia" />
+                    <Image
+                      cloudName="dxivl2lh5"
+                      publicId="places/vietnam_fseacf"
+                      crop="scale"
+                    />
                   </div>
                 </div>
               </Link>
@@ -304,7 +298,11 @@ function Home() {
               <div className="Sites TPHCM d-flex   ">
                 <div className="px-1 fw-bold fs-3">TP. Hồ Chí Minh </div>
                 <div className="National_flag ">
-                  <img className="" src={vietnam} alt="lá cờ quốc gia" />
+                  <Image
+                    cloudName="dxivl2lh5"
+                    publicId="places/vietnam_fseacf"
+                    crop="scale"
+                  />
                 </div>
               </div>
             </div>
@@ -312,7 +310,11 @@ function Home() {
               <div className="Sites Hue d-flex">
                 <div className="px-1 fw-bold fs-3">Huế </div>
                 <div className="National_flag ">
-                  <img className="" src={vietnam} alt="lá cờ quốc gia" />
+                  <Image
+                    cloudName="dxivl2lh5"
+                    publicId="places/vietnam_fseacf"
+                    crop="scale"
+                  />
                 </div>
               </div>
             </div>
@@ -320,7 +322,11 @@ function Home() {
               <div className="Sites NhaTrang d-flex">
                 <div className="px-1 fw-bold fs-3">Nha Trang </div>
                 <div className="National_flag ">
-                  <img className="" src={vietnam} alt="lá cờ quốc gia" />
+                  <Image
+                    cloudName="dxivl2lh5"
+                    publicId="places/vietnam_fseacf"
+                    crop="scale"
+                  />
                 </div>
               </div>
             </div>
@@ -336,9 +342,11 @@ function Home() {
                   <div className="d-flex row">
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="places/da-lat_s4w1q5"
                           className="d-block w-100"
-                          src={dalat}
+                          crop="scale"
                           alt="image canho"
                         />
                       </div>
@@ -348,10 +356,12 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="places/phuquoc_cvx6gt"
                           className="d-block w-100"
-                          src={phuquoc}
-                          alt="image resort"
+                          crop="scale"
+                          alt="image canho"
                         />
                       </div>
                       <div>
@@ -360,10 +370,12 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="places/sapa_vownhc"
                           className="d-block w-100"
-                          src={sapa}
-                          alt="image resort"
+                          crop="scale"
+                          alt="image canho"
                         />
                       </div>
                       <div>
@@ -372,9 +384,11 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="places/vungtau_zxuj4v"
                           className="d-block w-100"
-                          src={vungtau}
+                          crop="scale"
                           alt="image canho"
                         />
                       </div>
@@ -388,9 +402,11 @@ function Home() {
                   <div className="d-flex row">
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="places/danang_u845ar"
                           className="d-block w-100"
-                          src={danang}
+                          crop="scale"
                           alt="image canho"
                         />
                       </div>
@@ -400,10 +416,12 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="places/quynhon_eg3c8a"
                           className="d-block w-100"
-                          src={quynhon}
-                          alt="image resort"
+                          crop="scale"
+                          alt="image canho"
                         />
                       </div>
                       <div>
@@ -412,10 +430,12 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="places/quangbinh_zdr6su"
                           className="d-block w-100"
-                          src={quangbinh}
-                          alt="image resort"
+                          crop="scale"
+                          alt="image canho"
                         />
                       </div>
                       <div>
@@ -424,9 +444,11 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="places/quangninh_zv8c1s"
                           className="d-block w-100"
-                          src={quangninh}
+                          crop="scale"
                           alt="image canho"
                         />
                       </div>
@@ -478,9 +500,11 @@ function Home() {
                   <div className="d-flex row">
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="rest/canho_iox4ez"
                           className="d-block w-100"
-                          src={canho}
+                          crop="scale"
                           alt="image canho"
                         />
                       </div>
@@ -490,10 +514,12 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="rest/khachsan_kib5dt"
                           className="d-block w-100"
-                          src={khachsan}
-                          alt="image resort"
+                          crop="scale"
+                          alt="image canho"
                         />
                       </div>
                       <div>
@@ -502,10 +528,12 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="rest/resort_hraq5u"
                           className="d-block w-100"
-                          src={resort}
-                          alt="image resort"
+                          crop="scale"
+                          alt="image canho"
                         />
                       </div>
                       <div>
@@ -514,9 +542,11 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="rest/bietthu_pkv9sm"
                           className="d-block w-100"
-                          src={bietthu}
+                          crop="scale"
                           alt="image canho"
                         />
                       </div>
@@ -530,9 +560,11 @@ function Home() {
                   <div className="d-flex row">
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="rest/nha-go-cap-4-dep_qe5wjy"
                           className="d-block w-100"
-                          src={nhago}
+                          crop="scale"
                           alt="image canho"
                         />
                       </div>
@@ -542,10 +574,12 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="rest/nha-nghi-o-que-3_rhizkm"
                           className="d-block w-100"
-                          src={nhanghithonda}
-                          alt="image resort"
+                          crop="scale"
+                          alt="image canho"
                         />
                       </div>
                       <div>
@@ -554,10 +588,12 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="rest/glamping_kzu5wb"
                           className="d-block w-100"
-                          src={glamping}
-                          alt="image resort"
+                          crop="scale"
+                          alt="image canho"
                         />
                       </div>
                       <div>
@@ -566,9 +602,11 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="rest/b_b_ydiio1"
                           className="d-block w-100"
-                          src={nhanghibandb}
+                          crop="scale"
                           alt="image canho"
                         />
                       </div>
@@ -582,9 +620,11 @@ function Home() {
                   <div className="d-flex row">
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="rest/ryokan_zzsazk"
                           className="d-block w-100"
-                          src={Ryokan}
+                          crop="scale"
                           alt="image canho"
                         />
                       </div>
@@ -594,10 +634,12 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="rest/riad_tboox5"
                           className="d-block w-100"
-                          src={riad}
-                          alt="image resort"
+                          crop="scale"
+                          alt="image canho"
                         />
                       </div>
                       <div>
@@ -606,10 +648,12 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="rest/khu-cam-trai_x7crhn"
                           className="d-block w-100"
-                          src={khucamtrai}
-                          alt="image resort"
+                          crop="scale"
+                          alt="image canho"
                         />
                       </div>
                       <div>
@@ -618,9 +662,11 @@ function Home() {
                     </div>
                     <div className="col">
                       <div className="type_of_r_place">
-                        <img
+                        <Image
+                          cloudName="dxivl2lh5"
+                          publicId="rest/nha-thuyen_udvppb"
                           className="d-block w-100"
-                          src={nhathuyen}
+                          crop="scale"
                           alt="image canho"
                         />
                       </div>

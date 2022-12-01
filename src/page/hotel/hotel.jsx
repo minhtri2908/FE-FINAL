@@ -1,19 +1,29 @@
 import Header from '../../component/header/header';
 import './hotel.scss';
 import Footer from '../../component/Footer/Footer';
+import { IoLogoNoSmoking } from 'react-icons/io';
 import { BiSearch } from 'react-icons/bi';
-import { FaBed, FaLeaf } from 'react-icons/fa';
-import { AiOutlineCalendar } from 'react-icons/ai';
+import { GiChickenOven, GiWashingMachine } from 'react-icons/gi';
+import { CiParking1 } from 'react-icons/ci';
+import { FaBed, FaCity, FaShower } from 'react-icons/fa';
+import { MdBalcony, MdEmojiNature, MdFamilyRestroom } from 'react-icons/md';
+import { AiOutlineCalendar, AiOutlineFieldTime } from 'react-icons/ai';
 import { SiGooglemaps } from 'react-icons/si';
+import { FcCheckmark } from 'react-icons/fc';
+import { BsWifi, BsSnow } from 'react-icons/bs';
+import { GoLocation } from 'react-icons/go';
+import { RiSecurePaymentLine, RiErrorWarningLine } from 'react-icons/ri';
 import format from 'date-fns/format';
 import { DateRange, DateRangePicker } from 'react-date-range';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import { MDBCheckbox } from 'mdb-react-ui-kit';
-import nhago from '../../image/nha-go-cap-4-dep.jpg';
-import nhanghithonda from '../../image/nha-nghi-o-que-3.jpg';
-import glamping from '../../image/glamping.jpg';
-import { GoogleMap, useLoadScript, Marker } from '@react-google-maps/api';
+import { Image } from 'cloudinary-react';
+import {
+  faBed,
+  faCalendarDays,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 function Searchresult_app() {
   const [OpenDate, setOpenDate] = useState(false);
   useEffect(() => {
@@ -48,7 +58,6 @@ function Searchresult_app() {
       };
     });
   };
-  const {} = useLoadScript({googleMapsApiKey: ""})
   return (
     <>
       <Header />
@@ -191,7 +200,6 @@ function Searchresult_app() {
                 </button>
               </div>
             </div>
-            <div style={{ height: '11rem', width: '100%' }}></div>
           </div>
           {/* Thông tin hotel */}
           <div className="w-75 ">
@@ -217,33 +225,81 @@ function Searchresult_app() {
                 <div className="d-flex">
                   <div className=" description_picture_left">
                     <span>
-                      <img className="col w-100" src={nhago} alt="" />
+                      <Image
+                        cloudName="dxivl2lh5"
+                        publicId="rest/nha-go-cap-4-dep_qe5wjy"
+                        className="col w-100"
+                        crop="scale"
+                        alt="image canho"
+                      />
                     </span>
                     <span>
-                      <img className="col w-100" src={nhanghithonda} alt="" />
+                      <Image
+                        cloudName="dxivl2lh5"
+                        publicId="rest/nha-nghi-o-que-3_rhizkm"
+                        className="col w-100"
+                        crop="scale"
+                        alt="image canho"
+                      />
                     </span>
                   </div>
                   <div className="description_picture_right">
                     <span>
-                      <img className="col w-100 " src={glamping} alt="" />
+                      <Image
+                        cloudName="dxivl2lh5"
+                        publicId="rest/glamping_kzu5wb"
+                        className="col w-100"
+                        crop="scale"
+                        alt="image canho"
+                      />
                     </span>
                   </div>
                 </div>
                 <div className="col d-flex">
                   <span>
-                    <img className="col w-100" src={nhago} alt="" />
+                    <Image
+                      cloudName="dxivl2lh5"
+                      publicId="rest/nha-go-cap-4-dep_qe5wjy"
+                      className="col w-100"
+                      crop="scale"
+                      alt="image canho"
+                    />
                   </span>
                   <span>
-                    <img className="col w-100" src={nhanghithonda} alt="" />
+                    <Image
+                      cloudName="dxivl2lh5"
+                      publicId="rest/nha-nghi-o-que-3_rhizkm"
+                      className="col w-100"
+                      crop="scale"
+                      alt="image canho"
+                    />
                   </span>
                   <span>
-                    <img className="col w-100" src={nhago} alt="" />
+                    <Image
+                      cloudName="dxivl2lh5"
+                      publicId="rest/nha-go-cap-4-dep_qe5wjy"
+                      className="col w-100"
+                      crop="scale"
+                      alt="image canho"
+                    />
                   </span>
                   <span>
-                    <img className="col w-100" src={nhanghithonda} alt="" />
+                    <Image
+                      cloudName="dxivl2lh5"
+                      publicId="rest/nha-nghi-o-que-3_rhizkm"
+                      className="col w-100"
+                      crop="scale"
+                      alt="image canho"
+                    />
                   </span>
                   <span>
-                    <img className="col w-100" src={nhanghithonda} alt="" />
+                    <Image
+                      cloudName="dxivl2lh5"
+                      publicId="rest/nha-nghi-o-que-3_rhizkm"
+                      className="col w-100"
+                      crop="scale"
+                      alt="image canho"
+                    />
                   </span>
                 </div>
               </div>
@@ -251,7 +307,234 @@ function Searchresult_app() {
           </div>
         </div>
       </div>
-      {/* <Footer /> */}
+      <div className="content content-hotel-page w-75 ms-md-4">
+        <div className="d-flex mb-3 ">
+          <div className=" flex-fill border">
+            <div className="m-3 d-flex">
+              <GiChickenOven />
+              <div className="mx-2"> Bếp </div>
+            </div>
+          </div>
+          <div className="flex-fill  border mx-md-3 ">
+            <div className="m-3 d-flex">
+              <FaCity />
+              <div className="mx-2"> Nhìn ra thành phố</div>
+            </div>
+          </div>
+          <div className=" flex-fill border">
+            <div className="m-3 d-flex">
+              <GiWashingMachine />
+              <div className="mx-2 "> Máy giặt </div>
+            </div>
+          </div>
+          <div className="flex-fill border mx-md-3 ">
+            <div className="m-3 d-flex">
+              <BsWifi />
+              <div className="mx-2 "> Wifi miễn phí </div>
+            </div>
+          </div>
+          <div className="flex-fill  border">
+            <div className="m-3 d-flex">
+              <MdEmojiNature />
+              <div className="mx-2 "> Sân hiên </div>
+            </div>
+          </div>
+          <div className="flex-fill border mx-md-3 ">
+            <div className="m-3 d-flex">
+              <MdBalcony />
+              <div className="mx-2 "> Ban công </div>
+            </div>
+          </div>
+        </div>
+        <div className="d-flex mb-3 ">
+          <div className=" flex-fill border ">
+            <div className="m-3 d-flex">
+              <BsSnow />
+              <div className="mx-2"> Điều hòa không khí </div>
+            </div>
+          </div>
+          <div className="flex-fill  border mx-md-3 ">
+            <div className="m-3 d-flex">
+              <FaShower />
+              <div className="mx-2"> Phòng tắm riêng</div>
+            </div>
+          </div>
+          <div className=" flex-fill border">
+            <div className="m-3 d-flex">
+              <AiOutlineFieldTime />
+              <div className="mx-2 "> Lê tân 24 giờ </div>
+            </div>
+          </div>
+          <div className="flex-fill border mx-md-3 ">
+            <div className="m-3 d-flex">
+              <RiSecurePaymentLine />
+              <div className="mx-2 "> Ổ khóa mở bằng thẻ </div>
+            </div>
+          </div>
+        </div>
+        <div className="d-flex mb-3 flex-nowrap">
+          <div className=" p-2 order-1 w-100  shadow">
+            <pre>{`Nằm ở thành phố Vũng Tàu, cách Bãi Sau 700 m và Bãi Trước 1,8 km, Vung Tau Melody Apartment
+cung cấp chỗ nghỉ với WiFi miễn phí và khu vực ghế ngồi.
+Tất cả các căn tại đây đều được bố trí máy điều hòa, TV màn hình phẳng, phòng khách với ghế sofa, 
+bếp ăn đầy đủ tiện nghi đi kèm khu vực ăn
+uống và phòng tắm riêng với vòi sen, áo choàng tắm cùng dép đi trong phòng. Các căn còn được trang
+bị lò vi sóng, tủ lạnh, bếp nấu ăn và ấm đun nước.
+Căn hộ có sân hiên.
+Bãi Dứa nằm trong bán kính 2,7 km từ Vung Tau Melody Apartment trong khi Mũi Nghinh Phong cách đó 
+2,4 km. Sân bay gần nhất là Sân bay Vũng Tàu,cách chỗ nghỉ 6 km.
+Các cặp đôi đặc biệt thích địa điểm này — họ cho điểm 8,9 cho kỳ nghỉ dành cho 2 người.
+Vung Tau Melody Apartment đã chào đón khách Booking.com từ 23 tháng 4 2019.`}</pre>
+            <div>
+              <strong>
+                Vung Tau Melody Apartment đã chào đón khách Booking.com từ 23
+                tháng 4 2019.
+              </strong>
+            </div>
+            <div>
+              <strong>Các tiện nghi được ưa chuộng nhất: </strong>
+            </div>
+            <div className="d-flex">
+              <div className="mx-2">
+                <BsWifi /> Wifi miễn phí
+              </div>
+              <div className="mx-2">
+                <CiParking1 /> Chỗ đậu xe
+              </div>
+              <div className="mx-2">
+                <MdFamilyRestroom /> Phòng gia đình
+              </div>
+              <div className="mx-2">
+                <IoLogoNoSmoking /> Phòng không hút thuốc lá
+              </div>
+            </div>
+          </div>
+          <div className="order-2 flex-shrink-1 ">
+            <div className="p-3 shadow mx-md-3 mb-3 bg-custom-1">
+              <div className="">
+                <div className="fw-bold mb-3 ">Điểm nổi bật của chỗ nghỉ</div>
+                <div className="d-flex mb-3">
+                  <GoLocation />
+                  <div className="mx-2">Địa điểm hàng đầu chất lượng cao</div>
+                </div>
+                <div className="d-flex mb-3">
+                  <CiParking1 />
+                  <div className="mx-2">Có chỗ đậu xe trong khuôn viên</div>
+                </div>
+                <button
+                  className="btn btn-primary input-group mt-3 "
+                  type="submit"
+                >
+                  Đặt ngay
+                </button>
+              </div>
+            </div>
+            <div className=" p-3 mx-md-3 shadow bg-custom-1 ">
+              <div className="d-flex">
+                <FcCheckmark />
+                <div className="mx-2 color-text-green">Thông tin uy tín</div>
+              </div>
+              <div className="d-block mx-2">
+                Khách nói rằng mô tả và hình ảnh chỗ nghỉ này{' '}
+                <strong>đúng với sự thật.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="border-bottom mb-5"></div>
+      </div>
+      <div className=" content-hotel-page w-75 ms-md-4">
+        <div className="h4">Phòng trống</div>
+        <div className="mark d-flex w-75">
+          <div type="button" className="mx-2 flex-fill text-bg-info">
+            <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
+            <span
+              onClick={() => setOpenDate(!OpenDate)}
+              className="headerSearchText"
+            >{`${format(date[0].startDate, 'MM/dd/yyyy')} to ${format(
+              date[0].endDate,
+              'MM/dd/yyyy'
+            )} `}</span>
+
+            {OpenDate && (
+              <DateRangePicker
+                onChange={(item) => setDate([item.selection])}
+                showSelectionPreview={true}
+                moveRangeOnFirstSelection={false}
+                months={2}
+                ranges={date}
+                direction="horizontal"
+                className="date"
+              />
+            )}
+          </div>
+          <div className="mx-2 flex-fill text-bg-info">
+            <FontAwesomeIcon icon={faBed} />
+            <span
+              onClick={() => setChoosePeople(!ChoosePeople)}
+              className="headerSearchText"
+            >{`${People.Adult} Người lớn - ${People.Children} Trẻ em - ${People.Room} Phòng`}</span>
+            {ChoosePeople && (
+              <div className="people">
+                <div className="peopleItem">
+                  <span className="peopletext">Người lớn</span>
+                  <button
+                    disabled={People.Adult <= 1}
+                    className="couter"
+                    onClick={() => handlePeople('Adult', 'd')}
+                  >
+                    -
+                  </button>
+                  <span className="couter">{People.Adult}</span>
+                  <button
+                    className="couter"
+                    onClick={() => handlePeople('Adult', 'i')}
+                  >
+                    +
+                  </button>
+                </div>
+                <div className="peopleItem">
+                  <span className="peopletext">Trẻ em</span>
+                  <button
+                    disabled={People.Children <= 0}
+                    className="couter"
+                    onClick={() => handlePeople('Children', 'd')}
+                  >
+                    -
+                  </button>
+                  <span className="couter">{People.Children}</span>
+                  <button
+                    className="couter"
+                    onClick={() => handlePeople('Children', 'i')}
+                  >
+                    +
+                  </button>
+                </div>
+                <div className="peopleItem">
+                  <span className="peopletext">Phòng</span>
+                  <button
+                    disabled={People.Room <= 1}
+                    className="couter"
+                    onClick={() => handlePeople('Room', 'd')}
+                  >
+                    -
+                  </button>
+                  <span className="couter">{People.Room}</span>
+                  <button
+                    className="couter"
+                    onClick={() => handlePeople('Room', 'i')}
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
+            )}
+          </div>
+          <button type="button" className="btn btn-light" >Thay đổi tìm kiếm</button>
+         
+        </div>
+      </div>
+      <Footer />
     </>
   );
 }
